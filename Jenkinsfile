@@ -4,8 +4,8 @@ pipeline {
     agent any
     tools { nodejs "NodeJS" }
     environment { 
-        registry = "bahaeddinesaid/tpachatprojectfront" 
-        registryCredential = 'dockerHub' 
+        registry = "majdimsallem/tpachatprojectfront" 
+        registryCredential = 'dockerhub_id' 
 	
 	dockerImage = '' 
     }		
@@ -15,9 +15,8 @@ pipeline {
             steps {
 
                 echo 'Pulling...';
-                git branch: 'bahaeddine',
-                url : 'https://github.com/bahaeddinesaid/TP_Achat_devops_front',
-		credentialsId: '05193d27-514a-4ce0-aa03-95d9d90dfe60';
+                git branch: 'master',
+                url : 'https://github.com/Majdi-msallem/AngularDevops.git';
             }
         }
 	    
@@ -85,7 +84,7 @@ pipeline {
     post {
             always{
                 
-                emailext to: "bahaeddine.said@esprit.tn",
+                emailext to: "majdi.msallem@esprit.tn",
                 subject: "[DevOps Angular]jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
                 body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}",
 		attachLog: true
