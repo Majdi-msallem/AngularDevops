@@ -3,7 +3,7 @@ services:
 
 
   angular:
-    image: majdimsallem/front:22
+    image: majdimsallem/front:24
     container_name: angular
     env_file: ./.env
     ports:
