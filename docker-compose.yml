@@ -3,7 +3,7 @@ services:
 
 
   angular-fe:
-    image: majdimsallem/tpachatprojectfront:latest
+    image: majdimsallem/tpachatprojectfront:19
     container_name: angular-fe
     env_file: ./.env
     ports:
