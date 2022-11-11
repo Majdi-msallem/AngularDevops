@@ -4,7 +4,7 @@ pipeline {
     agent any
     tools { nodejs "NodeJS" }
     environment { 
-        registry = "majdimsallem/tpachatprojectfront" 
+        registry = "majdimsallem/front" 
         registryCredential = 'dockerhub_id' 
 	
 	dockerImage = '' 
